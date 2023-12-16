@@ -12,10 +12,13 @@
     </head>
 <body>
 
-    <!--
-    Todo :: Sys Call
-    -->
+    <pre>
+    <?php
+        system("./service");
+    ?>
+    </pre>
 
     <script src="./js/bootstrap.min.js"></script>
 </body>
+<script>document.getElementById("cmd").focus();</script>
 </html>

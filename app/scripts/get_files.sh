@@ -31,3 +31,5 @@ done
 for file in ${js_files}; do
     cp "${DIR_FILES}/node_modules/bootstrap/dist/js/${file}" "${DIR_JS}/${file}" 
 done
+
+cp "${DIR_CURRENT}/../../service/target/debug/service" "${DIR_CURRENT}/../service"
