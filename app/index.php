@@ -9,7 +9,8 @@
         <meta name="generator" content="Hugo 0.84.0">
         <title>Simple Web Assignment</title>
         <link href="./css/bootstrap.min.css" rel="stylesheet">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/ext/jquery.min.js"></script>
+        <script type="text/javascript" src="js/ext/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         </head>
     <body>

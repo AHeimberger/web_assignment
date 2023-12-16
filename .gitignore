@@ -1,4 +1,5 @@
 service/target
 app/scripts/files
-app/style
+app/js/ext
+app/css
 app/service

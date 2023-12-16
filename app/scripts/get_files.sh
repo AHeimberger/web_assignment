@@ -1,12 +1,13 @@
 DIR_CURRENT=$(dirname "$0")
 DIR_FILES="${DIR_CURRENT}/files"
 DIR_STYLE="${DIR_CURRENT}/../css"
-DIR_JS="${DIR_CURRENT}/../js"
+DIR_JS="${DIR_CURRENT}/../js/ext"
 
 set -e # exit on any failure (e.g. a crashing test)
 set -o pipefail # propagate a failure through pipe
 
 BOOSTRAP_VERSION="5.3.2"
+JQUERY_VERSION="3.7.1"
 
 rm -rf "${DIR_FILES}"
 mkdir -p "${DIR_FILES}" 
@@ -33,3 +34,8 @@ for file in ${js_files}; do
 done
 
 cp "${DIR_CURRENT}/../../service/target/debug/service" "${DIR_CURRENT}/../service"
+
+
+npm install --prefix "${DIR_FILES}" jquery@${JQUERY_VERSION}
+
+cp "${DIR_FILES}/node_modules/jquery/dist/jquery.min.js" "${DIR_JS}/jquery.min.js" 
