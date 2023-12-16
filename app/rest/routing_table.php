@@ -6,7 +6,17 @@ $mode = $_REQUEST['mode'];
 $ojbRoutingTable = new RoutingTable();
 
 if($mode == "load") {
-	echo $ojbRoutingTable->getAll();
+	$entries = $ojbRoutingTable->getAll();
+	foreach ($entries as &$entry) {
+		echo "<tr>
+				<td scope=\"row\">" . $entry->index . "</td>
+				<td>" . $entry->destination . "</td>
+				<td>" . $entry->gateway . "</td>
+				<td>" . $entry->flags . "</td>
+				<td>" . $entry->$netif . "</td>
+				<td>" . $entry->$expire . "</td>
+			</tr>";
+	}
 }
 
 ?>

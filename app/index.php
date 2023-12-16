@@ -31,6 +31,6 @@
             <tbody></tbody>
         </table>
 
-        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ext/bootstrap.min.js"></script>
     </body>
 </html>
