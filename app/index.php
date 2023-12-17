@@ -30,6 +30,7 @@
                 <th scope="col">Flags</th>
                 <th scope="col">Netif</th>
                 <th scope="col">Expire</th>
+                <th scope="col">On/Off Toggle</th>
                 <th scope="col">Delete</th>
                 </tr>
             </thead>

@@ -15,6 +15,7 @@ if ($mode == "load") {
 				<td>" . $entry->flags . "</td>
 				<td>" . $entry->$netif . "</td>
 				<td>" . $entry->$expire . "</td>
+				<td> <button name=\"toggle\" class=\"toggle btn btn-danger\" data_index=\"" . $entry->index . "\">Toggle On/Off</button> </td>
 				<td> <button name=\"delete\" class=\"delete btn btn-primary\" data_index=\"" . $entry->index . "\">Delete</button> </td>
 			</tr>";
 	}
@@ -25,6 +26,10 @@ else if ($mode=="reset"){
 else if ($mode=="delete"){
 	$index = $_REQUEST['index'];
 	$ojbRoutingTable->delete($index);
+}
+else if ($mode=="toggle"){
+	$index = $_REQUEST['index'];
+	$ojbRoutingTable->toggle($index);
 }
 
 ?>

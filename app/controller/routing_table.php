@@ -66,6 +66,11 @@ final class RoutingTable {
 		$output = shell_exec("../service -d $index");
 		echo "delete: $output";
 	}
+
+	public function toggle($index){
+		$output = shell_exec("../service -t $index");
+		echo "toggle: $output";
+	}
 }
 
 ?>

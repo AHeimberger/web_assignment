@@ -11,6 +11,12 @@ $(document).ready(function(){
 		}
 	})
 
+	$("body").on("click", ".toggle", function(){
+		data_index = $(this).attr("data_index");
+		toggleData(data_index);
+	});
+
+
 	$("body").on("click", ".delete", function(){
 		data_index = $(this).attr("data_index");
 		var temp = confirm("Are you sure?");
@@ -58,6 +64,21 @@ $(document).ready(function(){
 		$.get({
 			url : "rest/routing_table.php",
 			data : { mode: "delete", index: data_index },
+			success : function(){
+				loadData();
+			},
+			complete : function(){
+				$('#loading').hide();
+			}
+		});
+	}
+
+	function toggleData(index){
+		$('#loading').show();
+
+		$.get({
+			url : "rest/routing_table.php",
+			data : { mode: "toggle", index: data_index },
 			success : function(){
 				loadData();
 			},
