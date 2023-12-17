@@ -1,5 +1,6 @@
 npm_files
 service/target
+**/table.entries
 app/js/ext
 app/css
 app/service
