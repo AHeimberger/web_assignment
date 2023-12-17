@@ -36,6 +36,7 @@ final class RoutingTable {
 	public function getAll(){
 		$index = 0;
 		$output = shell_exec("../service");
+		echo "load: $output";
 
 		foreach(preg_split("/((\r?\n)|(\r\n?))/", $output) as $line){
 			if ($index == 0) {

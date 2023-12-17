@@ -5,7 +5,7 @@ $mode = $_REQUEST['mode'];
 
 $ojbRoutingTable = new RoutingTable();
 
-if($mode == "load") {
+if ($mode == "load") {
 	$entries = $ojbRoutingTable->getAll();
 	foreach ($entries as &$entry) {
 		echo "<tr>
