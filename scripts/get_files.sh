@@ -19,10 +19,12 @@ rm -rf "${DIR_JS}"
 mkdir -p "${DIR_JS}"
 
 style_files="
-    bootstrap.min.css"
+    bootstrap.min.css
+    bootstrap.min.css.map"
 
 js_files="
-    bootstrap.min.js"
+    bootstrap.min.js
+    bootstrap.min.js.map"
 
 npm install --prefix "${DIR_FILES}" bootstrap@${BOOSTRAP_VERSION}
 for file in ${style_files}; do
