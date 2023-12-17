@@ -8,6 +8,8 @@ $ojbRoutingTable = new RoutingTable();
 if ($mode == "load") {
 	$entries = $ojbRoutingTable->getAll();
 	foreach ($entries as &$entry) {
+		$enabled_text = ($entry->enabled == "true") ? "ON" : "OFF";
+		$enabled_style = ($entry->enabled == "true") ? "btn-success" : "btn-danger";
 		echo "<tr>
 				<td scope=\"row\">" . $entry->index . "</td>
 				<td>" . $entry->destination . "</td>
@@ -15,7 +17,7 @@ if ($mode == "load") {
 				<td>" . $entry->flags . "</td>
 				<td>" . $entry->$netif . "</td>
 				<td>" . $entry->$expire . "</td>
-				<td> <button name=\"toggle\" class=\"toggle btn btn-danger\" data_index=\"" . $entry->index . "\">Toggle On/Off</button> </td>
+				<td> <button name=\"toggle\" class=\"toggle btn " . $enabled_style . "\" data_index=\"" . $entry->index . "\">" . $enabled_text . "</button> </td>
 				<td> <button name=\"delete\" class=\"delete btn btn-primary\" data_index=\"" . $entry->index . "\">Delete</button> </td>
 			</tr>";
 	}

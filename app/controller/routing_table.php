@@ -7,8 +7,9 @@ final class RoutingEntry {
  	public string $flags;
  	public string $netif;
  	public string $expire;
+	public string $enabled;
  
-     public function __construct(int $index, string $destination, string $gateway, string $flags, string $netif, string $expire) 
+     public function __construct(int $index, string $destination, string $gateway, string $flags, string $netif, string $expire, string $enabled) 
      {
  		$this->index = $index;
         $this->destination = $destination;
@@ -16,6 +17,7 @@ final class RoutingEntry {
  		$this->flags = $flags;
  		$this->netif = $netif;
  		$this->expire = $expire;
+		$this->enabled = $enabled;
      }
 }
 
@@ -49,8 +51,8 @@ final class RoutingTable {
  			}
  
 			try {
-				list($destination, $gateway, $flags, $netif, $expire) = explode(" ", $line, 5);
-				$routing_entry = new RoutingEntry($index, $destination, $gateway, $flags, $netif, "");
+				list($destination, $gateway, $flags, $netif, $expire, $enabled) = explode(" ", $line, 6);
+				$routing_entry = new RoutingEntry($index, $destination, $gateway, $flags, $netif, $expire, $enabled);
 				array_push($this->entries, $routing_entry);
 			} catch (Exception $e) {
 				echo "Failure: {$e->getMessage()}\n";
