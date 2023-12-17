@@ -61,7 +61,7 @@ $(document).ready(function(){
 	function deleteData(index){
 		$('#loading').show();
 
-		$.get({
+		$.post({
 			url : "rest/routing_table.php",
 			data : { mode: "delete", index: data_index },
 			success : function(){
