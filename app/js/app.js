@@ -28,6 +28,8 @@ $(document).ready(function(){
 	});
 
 	function loadData(){
+		$('#loading').show();
+
 		$.get({
 			url : "rest/routing_table.php",
 			data : { mode: 'load' },
@@ -44,46 +46,38 @@ $(document).ready(function(){
 	};
 
 	function resetData() {
-		$('#loading').show();
-
 		$.get({
 			url : "rest/routing_table.php",
 			data : { mode: "reset" },
 			success : function(){
 				loadData();
-			},
-			complete : function(){
-				$('#loading').hide();
 			}
 		});
 	}
 
 	function deleteData(index){
-		$('#loading').show();
+		$(".delete").css("opacity", "0.5");
+		$(".delete").attr("disabled", true);
 
 		$.post({
 			url : "rest/routing_table.php",
 			data : { mode: "delete", index: data_index },
+
 			success : function(){
 				loadData();
-			},
-			complete : function(){
-				$('#loading').hide();
 			}
 		});
 	}
 
 	function toggleData(index){
-		$('#loading').show();
+		$(".toggle").css("opacity", "0.5");
+		$(".toggle").attr("disabled", true);
 
 		$.get({
 			url : "rest/routing_table.php",
 			data : { mode: "toggle", index: data_index },
 			success : function(){
 				loadData();
-			},
-			complete : function(){
-				$('#loading').hide();
 			}
 		});
 	}
