@@ -15,8 +15,8 @@ if ($mode == "load") {
 				<td>" . $entry->destination . "</td>
 				<td>" . $entry->gateway . "</td>
 				<td>" . $entry->flags . "</td>
-				<td>" . $entry->$netif . "</td>
-				<td>" . $entry->$expire . "</td>
+				<td>" . $entry->netif . "</td>
+				<td>" . $entry->expire . "</td>
 				<td> <button name=\"toggle\" class=\"toggle btn " . $enabled_style . "\" data_index=\"" . $entry->index . "\">" . $enabled_text . "</button> </td>
 				<td> <button name=\"delete\" class=\"delete btn btn-primary\" data_index=\"" . $entry->index . "\">Delete</button> </td>
 			</tr>";
