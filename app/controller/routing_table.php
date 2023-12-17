@@ -28,6 +28,11 @@ final class RoutingTable {
 		$this->entries = array();
 	}
 
+	public function reset() {
+		$output = shell_exec("../service -r=true");
+		echo "reset: $output";
+	}
+	
 	public function getAll(){
 		$index = 0;
 		$output = shell_exec("../service");
@@ -44,16 +49,21 @@ final class RoutingTable {
  
 			try {
 				list($destination, $gateway, $flags, $netif, $expire) = explode(" ", $line, 5);
-				// todo entries might be empty
 				$routing_entry = new RoutingEntry($index, $destination, $gateway, $flags, $netif, "");
 				array_push($this->entries, $routing_entry);
 			} catch (Exception $e) {
 				echo "Failure: {$e->getMessage()}\n";
 			}
+
 			$index++;
 		}
 
 		return $this->entries;
+	}
+
+	public function delete($index){
+		$output = shell_exec("../service -d $index");
+		echo "delete: $output";
 	}
 }
 

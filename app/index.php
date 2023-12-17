@@ -15,6 +15,10 @@
         </head>
     <body>
 
+        <p>
+            <button name="reset" class="btn btn-secondary">Reset Settings</button>
+        </p>
+
         <p id="loading" style="display:none"> Loading.............. </p>
 
         <table class="table table-bordered">
@@ -26,6 +30,7 @@
                 <th scope="col">Flags</th>
                 <th scope="col">Netif</th>
                 <th scope="col">Expire</th>
+                <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody></tbody>

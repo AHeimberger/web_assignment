@@ -15,8 +15,16 @@ if($mode == "load") {
 				<td>" . $entry->flags . "</td>
 				<td>" . $entry->$netif . "</td>
 				<td>" . $entry->$expire . "</td>
+				<td> <button name=\"delete\" class=\"delete btn btn-primary\" data_index=\"" . $entry->index . "\">Delete</button> </td>
 			</tr>";
 	}
+}
+else if ($mode=="reset"){
+	$ojbRoutingTable->reset();
+}
+else if ($mode=="delete"){
+	$index = $_REQUEST['index'];
+	$ojbRoutingTable->delete($index);
 }
 
 ?>
