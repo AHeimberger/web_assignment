@@ -4,3 +4,4 @@ service/target
 app/js/ext
 app/css
 app/service
+*.bkp
