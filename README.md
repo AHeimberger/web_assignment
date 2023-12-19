@@ -25,3 +25,4 @@
 - https://www.php.net/docs.php
 - https://api.jquery.com/
 - https://api.jquery.com/jQuery.ajax/
+- https://icons.getbootstrap.com/
