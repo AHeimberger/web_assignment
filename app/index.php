@@ -15,28 +15,29 @@
         </head>
     <body>
 
-        <p>
-            <button name="reset" class="btn btn-secondary">Reset Settings</button>
-        </p>
+        <main role="main" class="container">
 
-        <p id="loading" style="display:none"> Loading.............. </p>
+            <h1 class="mt-5">Routing Table</h1>
 
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Gateway</th>
-                <th scope="col">Flags</th>
-                <th scope="col">Netif</th>
-                <th scope="col">Expire</th>
-                <th scope="col">On/Off Toggle</th>
-                <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Gateway</th>
+                    <th scope="col">Flags</th>
+                    <th scope="col">Netif</th>
+                    <th scope="col">Expire</th>
+                    <th scope="col" colspan="2">Actions
+                    </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
 
-        <script src="./js/ext/bootstrap.min.js"></script>
+            <p id="loading" style="display:none"> Loading.............. </p>
+
+            <p><button name="reset" class="btn btn-secondary">Reset Settings</button></p>
+        </main>
     </body>
 </html>
