@@ -36,7 +36,10 @@
                 <tbody></tbody>
             </table>
 
-            <p id="loading" style="display:none"> Loading.............. </p>
+            <div id="loading" style="display: none;">
+                <div class="spinner-border spinner-border-sm" role="status">&nbsp;</div>
+                <span class="sr-only">Loading...</span>
+            </div>
 
             <p><button name="reset" class="btn btn-secondary">Reset Settings</button></p>
         </main>
