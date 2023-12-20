@@ -16,7 +16,6 @@ $(document).ready(function(){
 		toggleData(data_index);
 	});
 
-
 	$("body").on("click", ".delete", function(){
 		data_index = $(this).attr("data_index");
 		var temp = confirm("Are you sure?");
