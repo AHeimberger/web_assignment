@@ -5,7 +5,7 @@
 - install rust : https://rustup.rs/
 - build rust service: `pushd service && cargo build && popd`
 - get sources like bootstrap and jquery: `./scripts/get_files.sh`
-- install php: `apt-get install php`
+- install php: `apt-get install php npm`
 - start php server: `./scripts/start_server.sh`
 
 ## Architecture
