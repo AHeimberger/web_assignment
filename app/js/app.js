@@ -26,6 +26,23 @@ $(document).ready(function(){
 		}
 	});
 
+	$(".table").on("click", ".edit", function(){
+		$(this).hide();
+		$(this).parent().find(".save, .cancel").show();
+	});
+
+	$(".table").on("click", ".cancel", function(){
+		$(this).hide();
+		$(this).parent().find(".save").hide();
+		$(this).parent().find(".edit").show();
+	});
+
+	$(".table").on("click", ".save", function(){
+		$(this).hide();
+		$(this).parent().find(".cancel").hide();
+		$(this).parent().find(".edit").show();
+	});
+
 	function loadData(){
 		$('#loading').show();
 
