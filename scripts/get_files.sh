@@ -29,6 +29,7 @@ js_files="
     bootstrap.min.js.map"
 
 
+echo "boostrap-jquery"
 npm install --prefix "${DIR_FILES}" bootstrap@${BOOSTRAP_VERSION}
 for file in ${style_files}; do
     cp "${DIR_FILES}/node_modules/bootstrap/dist/css/${file}" "${DIR_STYLE}/${file}" 
@@ -36,13 +37,19 @@ done
 for file in ${js_files}; do
     cp "${DIR_FILES}/node_modules/bootstrap/dist/js/${file}" "${DIR_JS}/${file}" 
 done
+
+
+echo "rust service"
+pushd service && cargo run && popd
 cp "${DIR_CURRENT}/../service/target/debug/service" "${DIR_CURRENT}/../app/service"
 
 
+echo "jquery"
 npm install --prefix "${DIR_FILES}" jquery@${JQUERY_VERSION}
 cp "${DIR_FILES}/node_modules/jquery/dist/jquery.min.js" "${DIR_JS}/jquery.min.js" 
 
 
+echo "boostrap-icons"
 npm install --prefix "${DIR_FILES}" bootstrap-icons
 cp "${DIR_FILES}/node_modules/bootstrap-icons/font/bootstrap-icons.css" "${DIR_STYLE}/bootstrap-icons.css" 
 cp -r "${DIR_FILES}/node_modules/bootstrap-icons/font/fonts" "${DIR_STYLE}/fonts" 
