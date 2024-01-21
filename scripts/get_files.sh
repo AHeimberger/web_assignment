@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 DIR_CURRENT=$(dirname "$0")
 DIR_FILES="${DIR_CURRENT}/npm_files"
 DIR_STYLE="${DIR_CURRENT}/../app/css"
