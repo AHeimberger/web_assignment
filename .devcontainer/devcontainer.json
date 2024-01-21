@@ -1,0 +1,12 @@
+{
+  "name": "web_assignment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+  "remoteUser": "vscode",
+  "forwardPorts": [3000],
+  "containerEnv": {
+    "SHELL": "/bin/bash"
+  }
+}
