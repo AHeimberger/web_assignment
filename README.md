@@ -5,8 +5,12 @@
 - start vscode
 - shortcut `ctrl+shift+p`
 - execute `Dev Containers: Rebuild Container`
-- in terminal execute `./scripts/get_files.sh`, `./scripts/start_server.sh`
+- in vscode terminal execute
+    - `./scripts/build_service.sh`
+    - `./scripts/get_files.sh`
+    - `./scripts/run_server.sh`
 - browse to: http://localhost:3000/
+
 
 ## Architecture
 
@@ -18,6 +22,7 @@
 - `controller/routing_table.php` - implementation to call linux service 
 - `service` - implementation of a service which provides the routing_table entries
 - `table.entries` - storage to store entries
+
 
 ## Resources
 

@@ -10,4 +10,4 @@ RUN groupadd --gid $USER_GID $USERNAME && \
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get -y install --no-install-recommends \
-    npm php git rust-all
+    npm php git rust-all tmux

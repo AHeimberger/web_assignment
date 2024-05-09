@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
+set -e # exit on any failure (e.g. a crashing test)
+set -o pipefail # propagate a failure through pipe
+
 DIR_CURRENT=$(dirname "$0")
 DIR_FILES="${DIR_CURRENT}/npm_files"
 DIR_STYLE="${DIR_CURRENT}/../app/css"
 DIR_JS="${DIR_CURRENT}/../app/js/ext"
-
-set -e # exit on any failure (e.g. a crashing test)
-set -o pipefail # propagate a failure through pipe
 
 BOOSTRAP_VERSION="5.3.2"
 JQUERY_VERSION="3.7.1"
